@@ -9,7 +9,7 @@
 .shop {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 90%;
+  grid-template-rows: 30vmax;
   grid-gap: 7px;
 }
 .shop__preview {
