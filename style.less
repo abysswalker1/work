@@ -1,11 +1,42 @@
+ html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {margin: 0;padding: 0;	border: 0; font-size: 16px;	font: inherit;}
+
+input, textarea {outline: none;}
+textarea {resize: none;}
+
+/*HTML5 display-role reset for older browsers*/
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {display: block;}
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: ''; content: none;}
+table {border-collapse: collapse; border-spacing: 0;}
+
+* {
+	box-sizing: border-box;
+}
+
  .interface {
+ 	background-image: url(Images/unknown.svg);
+ 	height: 100vh;
  	&__container {
- 		width: 67.5%;
- 		height: 30vmax;
- 		margin: 10% auto;
- 		display: flex;
- 		flex-direction: column;
- 		justify-content: space-between;
+ 		width: 60vmax;
+ 		margin: auto;
+ 		position: relative;
+ 		top: 20%;
  	}
  }
 
@@ -56,9 +87,9 @@
 			} 
 			&-menu {
 				overflow: hidden;
+
 				&-item {
 					margin-bottom: 5px;
-					height: 60px;
 					background: linear-gradient(66.89deg, #1A1A20 -24.78%, rgba(46, 48, 64, 0.61) 122.87%);
 				}
 			}
