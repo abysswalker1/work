@@ -1,165 +1,45 @@
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 16px;
-  font: inherit;
-}
-input,
-textarea {
-  outline: none;
-}
-textarea {
-  resize: none;
-}
-/*HTML5 display-role reset for older browsers*/
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: '';
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-* {
-  box-sizing: border-box;
-}
 .interface {
-  background-image: url(Images/unknown.svg);
+  background: url(Images/unknown.svg) center center;
+  background-size: cover;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .interface__container {
-  width: 60vmax;
-  margin: auto;
+  max-width: 1329px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
   position: relative;
-  top: 20%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
 }
 .shop {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 30vmax;
   grid-gap: 7px;
+  min-height: 649px;
 }
 .shop__preview {
   background: linear-gradient(180deg, #191E24 0%, #232529 100%);
+  min-height: 649px;
 }
 .shop__list {
   grid-column-start: 2;
   grid-column-end: 4;
   display: flex;
+  min-height: 649px;
 }
 .shop__list-tools {
   width: 6%;
   background: linear-gradient(66.89deg, #1A1A20 -24.78%, rgba(46, 48, 64, 0.61) 122.87%);
   opacity: 0.9;
   margin-right: 5px;
+  min-height: 649px;
 }
 .shop__list-tools-item {
   height: 6%;
@@ -192,18 +72,46 @@ table {
 }
 .shop__info {
   background: linear-gradient(180deg, #191E24 0%, #232529 100%);
+  min-height: 649px;
 }
 .buttons {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  max-width: 43.8%;
   margin-top: 20px;
 }
 .buttons__item {
-  margin-right: 20px;
-  width: 29%;
+  margin-right: 12px;
+  width: 150px;
+  min-width: 150px;
   padding: 4px;
-  height: 10px;
+  height: 19px;
   background: linear-gradient(180deg, #191E24 0%, #232529 100%);
+}
+
+.buttons__item:last-child {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 1030px) {
+  /*
+  Тут надо будет перебивать стили, которые установлены у тебя до этого
+  Например, переставить блоки друг под друга, потому что они просто преестанут влезать
+  */
+  .interface {
+    padding-top: 80px;
+    padding-bottom: 30px;
+    height: auto;
+  }
+
+  .shop {
+    display: block;
+  }
+
+  .shop__preview {
+    margin-bottom: 20px;
+  }
+
+  .shop__list {
+    margin-bottom: 20px;
+  }
 }
