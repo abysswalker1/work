@@ -1,42 +1,30 @@
- html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {margin: 0;padding: 0;	border: 0; font-size: 16px;	font: inherit;}
-
-input, textarea {outline: none;}
-textarea {resize: none;}
-
-/*HTML5 display-role reset for older browsers*/
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {display: block;}
-body {line-height: 1;}
-ol, ul {list-style: none;}
-blockquote, q {quotes: none;}
-blockquote:before, blockquote:after,
-q:before, q:after {content: ''; content: none;}
-table {border-collapse: collapse; border-spacing: 0;}
-
-* {
-	box-sizing: border-box;
+.dark {
+	color: grey;
 }
-
+.bright {
+	color: white;
+}
+.green {
+	color: #00D015;
+}
+ 
  .interface {
- 	background-image: url(Images/unknown.svg);
- 	height: 100vh;
+ 	background: url(Images/unknown.svg) center center;
+	  background-size: cover;
+	  height: 100vh;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
  	&__container {
- 		width: 60vmax;
- 		margin: auto;
- 		position: relative;
- 		top: 20%;
+ 		max-width: 1100px;
+	  padding-left: 20px;
+	  padding-right: 20px;
+	  width: 100%;
+	  position: relative;
+	  margin-right: auto;
+	  margin-left: auto;
+	  display: flex;
+	  flex-direction: column;
  	}
  }
 
@@ -47,21 +35,73 @@ table {border-collapse: collapse; border-spacing: 0;}
 	grid-gap: 7px;
 	&__preview {
 		background: linear-gradient(180deg, #191E24 0%, #232529 100%);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 15px 0;
+		&-tittle {
+			text-transform: uppercase;
+			color: rgba(255, 255, 255, 0.5);
+			text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);	
+		}
+		&-circle {
+			width: 120px;
+			height: 120px;
+			margin-top: 60px;
+			border: 2px solid transparent;
+			background-clip: border-box;
+			border-image: linear-gradient(to right, grey 50%, #00D015 50%);
+			border-radius: 50%;
+			filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.25));
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			&-basket {
+				width: 30px;
+				height: 32px;
+			}
+		}
+		&-box {
+			width: 100%;
+			height: 70px;
+			margin: 30px 0 20px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			background: linear-gradient(89.74deg, #1F6614 0.25%, rgba(9, 125, 35, 0) 94.98%);
+			border-left: 5px solid #00D015;
+			padding: 10px;
+			font-size: 0.9rem;
+			&-top {
+				display: flex;
+				justify-content: space-between;
+			}
+		}
+		&-notes {
+			width: 100%;
+			padding: 20px;
+			border-top: 1px solid ;
+			font-size: 0.9rem;
+		}
 	}
 	&__list {
 		grid-column-start: 2;
 		grid-column-end: 4;
 		display: flex;
+		overflow-y: hidden;
 		&-tools {
 			width: 6%;
 			background: linear-gradient(66.89deg, #1A1A20 -24.78%, rgba(46, 48, 64, 0.61) 122.87%);
 			opacity: 0.9;
 			margin-right: 5px;
 			&-item {
-				height: 6%;
+				height: 30px;
 				border-bottom: 1px solid grey;
 				background: linear-gradient(66.89deg, rgba(137, 164, 197, 0.15) -24.78%, rgba(153, 164, 176, 0) 122.87%);
 				opacity: 0.9;
+				display: flex;
+				align-items: center;
+				justify-content: center;
 				backdrop-filter: blur(25px);
 				&:nth-child(1) {
 					border-top: 1px solid grey;
@@ -69,47 +109,415 @@ table {border-collapse: collapse; border-spacing: 0;}
 				&:last-child {
 					border-left: 1px solid grey;
 				}
+				&-image {
+					width: 13px;
+					height: 17px;
+					z-index: 2;
+				}
 			}
 		}
 		&-goods {
 			width: 100%;
+			height: 400px;
 			&-tittle {
-				display: flex;
-				justify-content: space-between;
 				padding: 10px;
-				max-width: 200px;
-				&-bright {
-
-				}
-				&-dark {
-
-				}
 			} 
 			&-menu {
-				overflow: hidden;
-
+				min-height: 365px;
 				&-item {
 					margin-bottom: 5px;
 					background: linear-gradient(66.89deg, #1A1A20 -24.78%, rgba(46, 48, 64, 0.61) 122.87%);
+					height: 84px;
+					display: flex;
+					justify-content: space-between;
+					border-left: 7px solid grey;
+					&:nth-child(1) {
+						border-left: 7px solid #00D015;
+					}
+					&:nth-child(2) {
+						background: rgba(2, 96, 0, 0.8);
+						border-left: 7px solid #00D015;
+					}
+					&-icon {
+						width: 20%;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						padding: 5px 0;
+						&-image {
+							 width: 45%;
+						}
+					}
+					&-name {
+						width: 60%;
+						border-left: 1px solid grey;					
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						padding-left: 15px;
+						font-size: 0.8rem;
+						&-tittle {
+							font-size: 1.2rem;
+							color: white;
+							margin-bottom: 7px;
+						}
+						&-price {
+							display: flex;
+							&-image {
+								margin-right: 4px;
+								opacity: 0.5;
+							}
+						}
+
+					}
+					&-logo {
+						width: 20%;
+						border-left: 1px solid grey;
+						border-right: 1px solid grey; 
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						border-image: white;
+						&-image{
+							width: 60%;
+						}
+					}
 				}
 			}
 		}
 	}
 	&__info {
 		background: linear-gradient(180deg, #191E24 0%, #232529 100%);
+		display: flex;
+		flex-direction: column;
+		&-item {
+			font-size: 0.8rem;
+			color: white;
+			margin-bottom: 10px;
+
+			&-head {
+				padding: 4px;
+				background: linear-gradient(89.74deg, #1F6614 0.25%, rgba(9, 125, 35, 0) 94.98%);
+				border-left: 5px solid #00D015;
+			}
+			&-desk {
+				padding: 25px 33px 15px 13px;
+				border-bottom: 2px solid grey;
+				&-string {
+					width: 150px;
+					list-style: none;
+					background: url(Images/mark.png) no-repeat left 50%;
+					padding: 3px 0;
+					padding-left: 25px;
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+					&:last-child {
+						padding-top: 25px;
+						width: 100%;
+					}
+					&-counter {
+						display: flex;
+						align-items: center;
+						&-image {
+							margin-right: 5px;
+							&:last-child {
+								margin-right: 0;
+								margin-left: 5px;
+							}
+						}
+					}
+				}
+			}
+			&-price {
+				padding: 0 25px;
+				padding-top: 15px;
+
+			}
+		}
 	}
 }
 .buttons {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	max-width: 43.8%;
+	width: 43%;
 	margin-top: 20px;
 	&__item {
+		display: flex;
+		align-items: center;
 		margin-right: 20px;
-		width: 29%;
-		padding: 4px;
-		height: 10px;
+		padding: 5px 10px;
+		min-width: 30%;
+		color: white;
 		background: linear-gradient(180deg, #191E24 0%, #232529 100%);
+		&-icon {
+			display: flex;
+			margin-right: 10px;
+			&-inner {
+				text-transform: uppercase;
+				color: #00D015;
+				font-size: 0.8rem;
+				text-align: center;
+				margin: 3px 5px 0;
+			}
+			&-image {
+				margin: 0 5px;
+			}
+		}
+		&-text {
+			margin: 0 auto;
+		}
+		&:last-child {
+			padding-left: 2px;
+		}
+	}
+}
+
+
+// Адаптивка
+
+
+@media screen and (min-width: 1920px) {
+
+	body {
+		font-size: 1.25rem;
+	}	
+
+	.shop {
+		&__preview {
+			&-box {
+				font-size: 1rem;
+				height: 100px;
+			}
+			&-notes {
+				font-size: 1rem;
+			}
+		}
+
+		&__list {
+			&-tools {
+				&-item {
+					width: 40px;
+				}
+			}
+			&-goods {
+				&-menu {
+					&-item {
+						&-name {
+							margin-left: 20px;
+							font-size: 1rem;
+							&-tittle {
+								font-size: 1.6rem;
+							}
+						}
+					}
+				}
+			}
+		}
+		.info {
+			&__item {
+				margin-bottom: 15px;
+			}
+		}
+	}
+	.buttons {
+		width: 50%;
+		&__item {
+			&-icon {
+				&-inner {
+					font-size: 1rem;
+					margin-top: 5px;
+				}
+			}
+			&-text {
+				font-size: 1.1rem;
+			}
+		}
+	}
+}
+
+
+@media screen and (min-width: 2200px) {
+
+	body {
+		font-size: 1.5rem;
+	}	
+
+	.interface {
+		&__container {
+			max-width: 2000px;
+		}
+	}
+
+	.shop {
+		&__preview {
+			&-circle {
+				width: 160px;
+				height: 160px;
+				margin-top: 80px;
+				&-basket {
+					width: 40px;
+					height: 42px;
+
+				}
+			}
+			&-box {
+				font-size: 1.25rem;
+				margin: 50px 0 30px;
+			}
+			&-notes {
+				font-size: 1.25rem;
+				padding-top: 30px;
+			}
+		}
+		&__list {
+			&-tools {
+				&-item {
+					height: 55px;
+					&-image {
+						width: 20px;
+						height: 26px;
+						&:nth-child(2) {
+							height: 21px;
+						}
+					}
+				}
+			}
+			&-goods {
+				&-menu {
+					&-item {
+						height: 130px;
+						margin-left: 30px;
+						&-name {
+							font-size: 1.2rem;
+							&-tittle {
+								font-size: 2rem;
+							}
+						}
+					}
+				}
+			}
+		}
+		&__info {
+			&-item {
+				font-size: 1rem;
+				margin-bottom: 20px;
+				&-desk {
+					padding-bottom: 25px;
+					&-string {
+						width: 200px;
+						&-counter {
+							&-image {
+								width: 10px;
+								height: 24px;
+							}
+						}
+					}
+				}
+				&-price {
+					padding-top: 25px;
+				}
+			}
+		}
+	}
+
+	.buttons {
+		width: 50%;
+		&__item {
+			&-text {
+				font-size: 1.5rem;
+			}
+			&-icon {
+				&-image {
+					margin: 0 5px;
+					width: 20px;
+					height: 20px;
+				}
+			}
+		}
+	}
+}
+
+
+
+@media screen and (min-width: 3000px) {
+
+	body {
+		font-size: 2rem;
+	}		
+	.interface {
+		&__container {
+			max-width: 2500px;
+		}
+	}
+
+	.shop {
+		&__preview {
+			&-circle {
+				width: 200px;
+				height: 200px;
+				margin-top: 100px;
+			}
+			&-box {
+				font-size: 1.5rem;
+				margin: 70px 0 40px;
+				height: 120px;
+			}
+			&-notes {
+				font-size: 1.5rem;
+				padding-top: 40px;
+			}
+		}
+		&__list {
+			&-tools {
+				&-item {
+					height: 68px;
+					&-image {
+						width: 26px;
+						height: 30px;
+						&:nth-child(2) {
+							height: 26px;
+						}
+					}
+				}
+			}
+			&-goods {
+				&-menu {
+					&-item {
+						height: 160px;
+						margin-left: 30px;
+						&-name {
+							font-size: 1.4rem;
+							&-tittle {
+								font-size: 2.2rem;
+							}
+						}
+					}
+				}
+			}
+		}
+		&__info {
+			&-item {
+				font-size: 1.2rem;
+			}
+		}
+	}
+
+	.buttons {
+		&__item {
+			&-icon {
+				&-inner {
+					font-size: 1.5rem;
+					margin-top: 5px;
+				}
+				&-image {
+					margin: 5px 5px;
+					width: 25px;
+					height: 25px;
+				}
+			}
+		}
 	}
 }
